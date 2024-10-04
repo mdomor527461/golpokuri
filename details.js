@@ -1,9 +1,14 @@
+
+
+
 const loadDetails = (id) =>{
     fetch(`https://golpokuri-api.onrender.com/story/stories/${id}`)
     .then(res => res.json())
     .then(data => insertData(data));
 }
-
+const urlParams = new URLSearchParams(window.location.search);
+const id = urlParams.get('id');
+loadDetails(id);
 const insertData = (data) =>{
    const parent = document.getElementById('details');
    const div = document.createElement('div');
