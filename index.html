@@ -30,74 +30,76 @@
     <div class="site-wrap" id="home-section">
 
       <div class="site-mobile-menu site-navbar-target">
-        <div class="site-mobile-menu-header">
-          <div class="site-mobile-menu-close mt-3">
-            <span class="icon-close2 js-menu-toggle"></span>
-          </div>
-        </div>
-        <div class="site-mobile-menu-body"></div>
-      </div>
-
-   
-
-      <header class="site-navbar site-navbar-target mb-5" role="banner" style="background-color: #4de1ff;">
-
-        <div class="container">
-          <div class="row align-items-center position-relative">
-
-            <div class="col-3 ">
-              <div class="site-logo">
-                <a href="index.html" class="font-weight-bold">
-                  <h1 style="color: rgb(4, 4, 4);">GolpoKuri</h1>
-                </a>
+          <div class="site-mobile-menu-header">
+              <div class="site-mobile-menu-close mt-3">
+                  <span class="icon-close2 js-menu-toggle"></span>
               </div>
-            </div>
-
-            <div class="col-9  text-right">
-              <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
-                <ul class="site-menu main-menu js-clone-nav ml-auto" id="nav-list">
-                  <li><a href="index.html" class="nav-link text-dark">Home</a></li>
-                  <li><a href="about.html" class="nav-link text-dark">About</a></li>
-                  <div id="nav-outlook">               
-                  </div>        
-                </ul>
-              </nav>
-            </div>
-
-            
           </div>
-        </div>
-
+          <div class="site-mobile-menu-body"></div>
+      </div>
+  
+      <header class="site-navbar site-navbar-target mb-5" role="banner" style="background-color: #4de1ff;">
+          <div class="container">
+              <div class="row align-items-center position-relative">
+  
+                  <div class="col-3 ">
+                      <div class="site-logo">
+                          <a href="index.html" class="font-weight-bold">
+                              <h1 style="color: rgb(4, 4, 4);">GolpoKuri</h1>
+                          </a>
+                      </div>
+                  </div>
+  
+                  <div class="col-9 text-right">
+                      <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
+                          <ul class="site-menu main-menu js-clone-nav ml-auto" id="nav-outlook">
+                             
+                          </ul>
+                      </nav>
+  
+                      <!-- Mobile Menu Toggle Button -->
+                      <a href="#" class="d-lg-none js-menu-toggle" style="color: rgb(4, 4, 4);">
+                          <span class="icon-menu"></span>
+                      </a>
+                  </div>
+  
+              </div>
+          </div>
       </header>
-
-
-         <!-- conditional nav -->
-         <script>
+  
+      <!-- Conditional Nav -->
+      <script>
           const token = localStorage.getItem("token");
-          nav_menu = document.getElementById("nav-outlook")
-          if(token){
-            const user_type = localStorage.getItem("user_type");
-            if(user_type == "writer"){
+          const nav_menu = document.getElementById("nav-outlook");
+  
+          if (token) {
+              const user_type = localStorage.getItem("user_type");
+              if (user_type === "writer") {
+                  nav_menu.innerHTML = `
+                      <a href="index.html" class="nav-link text-dark">Home</a>
+                      <a href="about.html" class="nav-link text-dark">About</a>
+                      <a href="dashboard.html" class="nav-link text-dark">Dashboard</a>
+                      <a href="post_story.html" class="nav-link text-dark">Post Story</a>
+                      <a href="" class="nav-link btn" onclick="handleLogout(event)">Logout</a>
+                  `;
+              } else {
+                  nav_menu.innerHTML = `
+                      <a href="index.html" class="nav-link text-dark">Home</a>
+                      <a href="about.html" class="nav-link text-dark">About</a>
+                      <a href="index.html#stories" class="nav-link text-dark">Read Stories</a>
+                      <a href="" class="nav-link text-dark btn" onclick="handleLogout(event)">Logout</a>
+                  `;
+              }
+          } else {
               nav_menu.innerHTML = `
-              <a href="dashboard.html" class="nav-link text-dark">Dashboard</a>
-              <a href="post_story.html" class="nav-link text-dark">Post Story</a>
-              <a href="" class="nav-link btn" onclick="handleLogout(event)">Logout</a>
-              `;
-            }
-            else{
-              nav_menu.innerHTML = `
-              <a href="index.html#stories" class="nav-link text-dark" >Read Stories</a>
-              <a href="" class="nav-link text-dark btn" onclick="handleLogout(event)">Logout</a>
-              `;
-            }  
-          }
-          else{
-              nav_menu.innerHTML = `
-              <a href="register.html" class="nav-link text-dark">SignUp</a>
-              <a href="login.html" class="nav-link text-dark">Login</a>
+                  <a href="index.html" class="nav-link text-dark">Home</a>
+                  <a href="about.html" class="nav-link text-dark">About</a>
+                  <a href="register.html" class="nav-link text-dark">SignUp</a>
+                  <a href="login.html" class="nav-link text-dark">Login</a>
               `;
           }
       </script>
+  </div>
     <div class="ftco-blocks-cover-1">
       <div class="site-section-cover overlay" style="background-image: url('images/banner.jpg')">
         <div class="container">

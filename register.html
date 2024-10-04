@@ -26,59 +26,78 @@
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+  <div class="site-wrap" id="home-section">
 
-
-    <div class="site-wrap" id="home-section">
-
-        <div class="site-mobile-menu site-navbar-target">
-            <div class="site-mobile-menu-header">
-                <div class="site-mobile-menu-close mt-3">
-                    <span class="icon-close2 js-menu-toggle"></span>
-                </div>
+    <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close mt-3">
+                <span class="icon-close2 js-menu-toggle"></span>
             </div>
-            <div class="site-mobile-menu-body"></div>
         </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
 
+    <header class="site-navbar site-navbar-target mb-5" role="banner" style="background-color: #4de1ff;">
+        <div class="container">
+            <div class="row align-items-center position-relative">
 
-
-        <header class="site-navbar site-navbar-target mb-5" style="background-color: #4de1ff;" role="banner">
-
-            <div class="container">
-                <div class="row align-items-center position-relative">
-
-                    <div class="col-3 ">
-                        <div class="site-logo">
-                            <a href="index.html" class="font-weight-bold">
-                                <h1 style="color: rgb(4, 4, 4);">GolpoKuri</h1>
-                            </a>
-                        </div>
+                <div class="col-3 ">
+                    <div class="site-logo">
+                        <a href="index.html" class="font-weight-bold">
+                            <h1 style="color: rgb(4, 4, 4);">GolpoKuri</h1>
+                        </a>
                     </div>
-
-                    <div class="col-9  text-right">
-
-
-                        <span class="d-inline-block d-lg-none"><a href="#"
-                                class="text-white site-menu-toggle js-menu-toggle py-5 text-white"><span
-                                    class="icon-menu h3 text-white"></span></a></span>
-
-
-
-                        <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
-                            <ul class="site-menu main-menu js-clone-nav ml-auto ">
-                                <li class="active"><a href="index.html" class="nav-link">Home</a></li>
-                                <li><a href="about.html" class="nav-link">About</a></li>
-                                <li><a href="register.html" class="nav-link">SignUp</a></li>
-                                <li><a href="login.html" class="nav-link">Login</a></li>
-
-                            </ul>
-                        </nav>
-                    </div>
-
-
                 </div>
-            </div>
 
-        </header>
+                <div class="col-9 text-right">
+                    <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
+                        <ul class="site-menu main-menu js-clone-nav ml-auto" id="nav-outlook">
+                           
+                        </ul>
+                    </nav>
+
+                    <!-- Mobile Menu Toggle Button -->
+                    <a href="#" class="d-lg-none js-menu-toggle" style="color: rgb(4, 4, 4);">
+                        <span class="icon-menu"></span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- Conditional Nav -->
+    <script>
+        const token = localStorage.getItem("token");
+        const nav_menu = document.getElementById("nav-outlook");
+
+        if (token) {
+            const user_type = localStorage.getItem("user_type");
+            if (user_type === "writer") {
+                nav_menu.innerHTML = `
+                    <a href="index.html" class="nav-link text-dark">Home</a>
+                    <a href="about.html" class="nav-link text-dark">About</a>
+                    <a href="dashboard.html" class="nav-link text-dark">Dashboard</a>
+                    <a href="post_story.html" class="nav-link text-dark">Post Story</a>
+                    <a href="" class="nav-link btn" onclick="handleLogout(event)">Logout</a>
+                `;
+            } else {
+                nav_menu.innerHTML = `
+                    <a href="index.html" class="nav-link text-dark">Home</a>
+                    <a href="about.html" class="nav-link text-dark">About</a>
+                    <a href="index.html#stories" class="nav-link text-dark">Read Stories</a>
+                    <a href="" class="nav-link text-dark btn" onclick="handleLogout(event)">Logout</a>
+                `;
+            }
+        } else {
+            nav_menu.innerHTML = `
+                <a href="index.html" class="nav-link text-dark">Home</a>
+                <a href="about.html" class="nav-link text-dark">About</a>
+                <a href="register.html" class="nav-link text-dark">SignUp</a>
+                <a href="login.html" class="nav-link text-dark">Login</a>
+            `;
+        }
+    </script>
 
         <!-- registration start -->
         <div class="mt-5 mb-5">
