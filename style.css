@@ -1,0 +1,12 @@
+#cat-name{
+    font-weight: bolder;
+    font-size: 25px;
+    color: white;
+}
+#cat-name:hover{
+    color:black;
+}
+#nav-outlook{
+    display: inline;
+}
+
