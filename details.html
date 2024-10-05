@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="style.css">
     <style>
-      body{
+      #details{
         background-color: rgb(250, 237, 184);
       }
     </style>
@@ -107,6 +107,26 @@
  <div class="container" id="details">
  
  </div>
+  <!-- comment section -->
+<div class="d-flex justify-content-center mt-5">
+  <h1>Total Comments</h1>
+</div>
+<!-- comment conatainer -->
+<div id="comment-container">
+ 
+</div>
+
+<!-- comment-form  -->
+<div class="d-flex justify-content-center">
+  <form id="commentForm" style="width: 50%;" enctype="multipart/form-data">
+      <h1 class="text-center mt-5 mb-5">Add Comments</h1>
+      <div class="mb-3">
+          <label for="title" class="form-label" style="font-weight: bolder;">Comment</label>
+          <textarea name="content" id="content" style="width: 100%;"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary mt-3 mb-5">Create Story</button>
+  </form>  
+</div>
 
    <!-- Remove the container if you want to extend the Footer to full width. -->
 <div class="my-5">
@@ -247,6 +267,9 @@
   </footer>
   <!-- Footer -->
 </div>
+
+
+
 <!-- End of .container -->
 
     </div>
