@@ -8,7 +8,7 @@ const insertStories = (data) => {
         div.classList.add('my-5');
        div.innerHTML = `    
               <div class="post-entry-1 h-100">
-                   <img src="https://golpokuri-api.onrender.com${element.image}" alt="Image" class="img-fluid" style="width:400px;height:250px;">
+                   <img src="${element.image_url}" alt="Image" class="img-fluid" style="width:400px;height:250px;">
                 <div class="post-entry-1-contents" style="background-color: rgb(190, 236, 220);">  
                   <h1 class="mb-5 mt-5">${element.title}</h1>
                   <h4 class="mb-3 mt-3">${element.writer}</h4>
@@ -28,7 +28,7 @@ const insertStories = (data) => {
     });
 }
 function deleteStory(id) {
-  const deleteUrl = `https://golpokuri-api.onrender.com//story/stories/delete/${id}`; // Construct the delete URL
+  const deleteUrl = `https://golpokuri-api.vercel.app/story/stories/delete/${id}`; // Construct the delete URL
 
   // Confirm the deletion action
   if (confirm('Are you sure you want to delete this story?')) {

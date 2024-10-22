@@ -9,7 +9,7 @@ document.getElementById('storyCreateForm').onsubmit = async function(event) {
     formData.append('category', document.getElementById('category').value);
 
     try {
-        const response = await fetch(`https://golpokuri-api.onrender.com/story/create/`, {
+        const response = await fetch(`https://golpokuri-api.vercel.app/story/create/`, {
             method: 'POST',
             headers: {
                 'Authorization': `Token ${localStorage.getItem("token")}`, // Token authentication
@@ -34,7 +34,7 @@ document.getElementById('storyCreateForm').onsubmit = async function(event) {
 document.addEventListener('DOMContentLoaded', function () {
     const categorySelect = document.getElementById('category_list');
 
-    fetch('https://golpokuri-api.onrender.com/story/categories/')
+    fetch('https://golpokuri-api.vercel.app/story/categories/')
         .then(response => response.json())
         .then(data => {
             console.log(data);

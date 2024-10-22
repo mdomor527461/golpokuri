@@ -17,7 +17,7 @@ const handleRegistration = (event) => {
         document.getElementById("error").innerText = "";
         
         if (/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(password)) {
-            fetch("https://golpokuri-api.onrender.com/register/", {
+            fetch("https://golpokuri-api.vercel.app/register/", {
                 method: "POST",
                 headers: { "content-type": "application/json" },
                 body: JSON.stringify(info),

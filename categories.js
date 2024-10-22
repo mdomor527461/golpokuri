@@ -1,5 +1,5 @@
 const loadCategories = () =>{
-    fetch(`https://golpokuri-api.onrender.com/story/categories/`)
+    fetch(`https://golpokuri-api.vercel.app/story/categories/`)
     .then(res => res.json())
     .then(data => insertCategories(data));
 }
@@ -15,7 +15,7 @@ const insertCategories = (data) => {
        div.innerHTML = `
              <div class="listing-item" id="categories">
                 <div class="listing-image">
-                  <img src="https://golpokuri-api.onrender.com${element.image}" alt="Image" class="img-fluid" style="width:100%;height:250px;">
+                  <img src="${element.image}" alt="Image" class="img-fluid" style="width:100%;height:250px;">
                 </div>
                 <div class="listing-item-content">
                 <a href="" class="mb-2 btn" id="cat-name" onclick="setid(${element.id})"><--${element.name}--></a>         

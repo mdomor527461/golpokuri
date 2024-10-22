@@ -6,7 +6,7 @@ const handleLogin = (event) => {
         username,
         password,
     };
-    fetch("https://golpokuri-api.onrender.com/login/", {
+    fetch("https://golpokuri-api.vercel.app/login/", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(info),

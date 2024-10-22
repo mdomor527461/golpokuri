@@ -1,6 +1,6 @@
 
 const loadDetails = (id) =>{
-    fetch(`https://golpokuri-api.onrender.com/story/stories/${id}`)
+    fetch(`https://golpokuri-api.vercel.app/story/stories/${id}`)
     .then(res => res.json())
     .then(data => insertData(data));
 }
@@ -12,7 +12,7 @@ const insertData = (data) =>{
    const div = document.createElement('div');
    div.innerHTML = `
         <div class="d-flex justify-content-center">
-        <img src="https://golpokuri-api.onrender.com${data.image}" alt="" style="width: 80%;height:80vh;";>
+        <img src="${data.image_url}" alt="" style="width: 80%;height:80vh;";>
         </div>
         <h1 class="text-center mt-5 mb-5">${data.title}</h1>
         <p class="mt-5 mb-5" style="font-size:20px;line-spacing:5px;">${data.content}</p>
@@ -20,7 +20,7 @@ const insertData = (data) =>{
    parent.appendChild(div);
 }
 const loadComments = (id)=>{
-    fetch(`https://golpokuri-api.onrender.com/story/stories/${id}/comment`)
+    fetch(`https://golpokuri-api.vercel.app/story/stories/${id}/comment`)
     .then(res => res.json())
     .then(data => insertComment(data));
 }
@@ -51,7 +51,7 @@ document.getElementById('commentForm').onsubmit = async function(event) {
     const formData = new FormData();
     formData.append('content', document.getElementById('content').value);
     try {
-        const response = await fetch(`https://golpokuri-api.onrender.com/story/stories/${id}/comment`, {
+        const response = await fetch(`https://golpokuri-api.vercel.app/story/stories/${id}/comment`, {
             method: 'POST',
             headers: {
                 'Authorization': `Token ${localStorage.getItem("token")}`, // Token authentication

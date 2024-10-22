@@ -9,7 +9,7 @@ const insertStories = (data) => {
         div.classList.add('mb-6');
        div.innerHTML = `    
               <div class="post-entry-1 h-100 mt-3 mb-3">
-                   <img src="https://golpokuri-api.onrender.com${element.image}" alt="Image" class="img-fluid" style="width:400px;height:250px;fit-con">
+                   <img src="${element.image_url}" alt="Image" class="img-fluid" style="width:400px;height:250px;fit-con">
                 <div class="post-entry-1-contents" style="background-color: rgb(190, 236, 220);">  
                   <h1 class="mb-5 mt-5">${element.title}</h1>
                   <h4 class="mb-3 mt-3">Wrtier: ${element.writer}</h4>

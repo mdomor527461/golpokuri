@@ -4,7 +4,7 @@ const storyId = urlParams.get('id');
 console.log(storyId);
 // Use the storyId to fetch story details and populate the form
 // Define the API endpoint for fetching story details
-const storyDetailsUrl = `https://golpokuri-api.onrender.com/story/stories/edit/${storyId}`;
+const storyDetailsUrl = `https://golpokuri-api.vercel.app/story/stories/edit/${storyId}`;
 
 // Fetch the story details and populate the form
 fetch(storyDetailsUrl, {

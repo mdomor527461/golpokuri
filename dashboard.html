@@ -104,7 +104,7 @@
     const writer = localStorage.getItem("writer");
     console.log(writer);
     if(writer){
-        const apiUrl = `https://golpokuri-api.onrender.com/story/stories/?writer=${writer}`;                       
+        const apiUrl = `https://golpokuri-api.vercel.app/story/stories/?writer=${writer}`;                       
         fetch(apiUrl)
             .then(response => response.json()) 
             .then(data => {

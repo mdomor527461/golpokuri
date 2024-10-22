@@ -1,7 +1,7 @@
 const handleLogout = (event) => {
     event.preventDefault();  // Prevent the default anchor behavior
 
-    fetch("https://golpokuri-api.onrender.com/logout/", {
+    fetch("https://golpokuri-api.vercel.app/logout/", {
         method: "POST",  // Correct method
         headers: {
             "Content-Type": "application/json",
