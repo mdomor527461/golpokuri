@@ -15,7 +15,7 @@ const insertCategories = (data) => {
        div.innerHTML = `
              <div class="listing-item" id="categories">
                 <div class="listing-image">
-                  <img src="${element.image}" alt="Image" class="img-fluid" style="width:100%;height:250px;">
+                  <img src="${element.image_url}" alt="Image" class="img-fluid" style="width:100%;height:250px;">
                 </div>
                 <div class="listing-item-content">
                 <a href="" class="mb-2 btn" id="cat-name" onclick="setid(${element.id})"><--${element.name}--></a>         

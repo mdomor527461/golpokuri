@@ -21,11 +21,6 @@
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="style.css">
-    <style>
-      #details{
-        background-color: rgb(250, 237, 184);
-      }
-    </style>
 
   </head>
 
@@ -98,7 +93,7 @@
                       <a href="" class="nav-link btn" onclick="handleLogout(event)">Logout</a>
                   `;
               }
-              else {
+               else {
                   nav_menu.innerHTML = `
                       <a href="index.html" class="nav-link text-dark">Home</a>
                       <a href="about.html" class="nav-link text-dark">About</a>
@@ -115,28 +110,35 @@
               `;
           }
       </script>
- <div class="container" id="details">
- 
- </div>
-  <!-- comment section -->
-<div class="d-flex justify-content-center mt-5">
-  <h1>Total Comments</h1>
 </div>
-<!-- comment conatainer -->
-<div id="comment-container">
- 
+<div class="ftco-blocks-cover-1">
+    <div class="site-section-cover overlay" style="background-image: url('images/banner.jpg')">
+    <div class="container">
+        <div class="row align-items-center">
+        <div class="col-md-5" data-aos="fade-right">
+            <h1 class="mb-3 text-light">Where Every Story Takes You on a Magical Journey</h1>
+            <p class="text-light">Golpokuri is a storytelling platform where writers share imaginative tales, and readers enjoy captivating stories across various categories.</p>
+        </div>
+        </div>
+    </div>
+    </div>
 </div>
+    
 
-<!-- comment-form  -->
+<!-- category create form  -->
 <div class="d-flex justify-content-center">
-  <form id="commentForm" style="width: 50%;" enctype="multipart/form-data">
-      <h1 class="text-center mt-5 mb-5">Add Comments</h1>
-      <div class="mb-3">
-          <label for="title" class="form-label" style="font-weight: bolder;">Comment</label>
-          <textarea name="content" id="content" style="width: 100%;"></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary mt-3 mb-5">Create Story</button>
-  </form>  
+    <form id="categoryCreateForm" style="width: 50%;" enctype="multipart/form-data">
+        <h1 class="text-center mt-5 mb-5">Category Creation Form</h1>
+        <div class="mb-3">
+            <label for="title" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Image</label>
+            <input type="file" class="form-control" id="image" name="image" required>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3 mb-5">Create Category</button>
+    </form>  
 </div>
 
    <!-- Remove the container if you want to extend the Footer to full width. -->
@@ -278,9 +280,6 @@
   </footer>
   <!-- Footer -->
 </div>
-
-
-
 <!-- End of .container -->
 
     </div>
@@ -301,7 +300,8 @@
     <script src="js/aos.js"></script>
     <script src="js/main.js"></script>
     <!-- user difined js file -->
-    <script src="details.js"></script>
+    <script src="logout.js"></script>
+    <script src="create_cagegory.js"></script>
   </body>
 
 </html>
