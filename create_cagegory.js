@@ -17,7 +17,7 @@ document.getElementById('categoryCreateForm').onsubmit = async function(event) {
         if (response.ok) {
             alert('Category created successfully!');
             document.getElementById('categoryCreateForm').reset();
-            window.location.href = "dashboard.html";
+            window.location.href = "index.html";
         } else {
             const errorData = await response.json();
             console.error('Error:', errorData);

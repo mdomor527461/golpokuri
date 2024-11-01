@@ -12,7 +12,7 @@ const insertData = (data) =>{
    const div = document.createElement('div');
    div.innerHTML = `
         <div class="d-flex justify-content-center">
-        <img src="${data.image_url}" alt="" style="width: 80%;height:80vh;";>
+        <img src="${data.image_url}" alt="" style="width: 100%;height:80vh;";>
         </div>
         <h1 class="text-center mt-5 mb-5">${data.title}</h1>
         <p class="mt-5 mb-5" style="font-size:20px;line-spacing:5px;">${data.content}</p>
@@ -31,12 +31,12 @@ const insertComment = (data) => {
         const parent = document.getElementById("comment-container");
         const div = document.createElement("div"); // Corrected from 'ootion' to 'option'
        div.innerHTML = `    
-              <div class="d-flex justify-content-around mt-5" style="background-color: antiquewhite;padding: 20px; width: 60%;margin: 0 auto;border:2px solid black;border-radius:10px;">
+            <div class="d-flex justify-content-around mt-5 container" style="background-color: antiquewhite;padding: 20px; width: 100%;margin: 0 auto;border:2px solid black;border-radius:10px;">
                 <div class="mx-5 d-flex justify-content-center align-items-center">
                 <h1 style="padding: 5px;margin-top: 5px;">${element.user_name}</h1>
                 </div>
                 <div class="d-flex justify-content-center align-items-center">
-                    <h4 style="width: 300px;">${element.content}</h4>
+                    <h4 style="width: 100%;">${element.content}</h4>
                 </div>
             </div>
        `;

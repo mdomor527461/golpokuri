@@ -80,7 +80,7 @@
                     <a href="about.html" class="nav-link text-dark">About</a>
                     <a href="dashboard.html" class="nav-link text-dark">Dashboard</a>
                     <a href="post_story.html" class="nav-link text-dark">Post Story</a>
-                    <a href="" class="nav-link btn" onclick="handleLogout(event)">Logout</a>
+                    <a href="handleLogout('event')" class="nav-link btn" onclick="handleLogout(event)">Logout</a>
                 `;
             }
             else if(user_type == ""){
@@ -90,7 +90,7 @@
                       <a href="create_category.html" class="nav-link text-dark">Create Category</a>
                       <a href="dashboard.html" class="nav-link text-dark">Dashboard</a>
                       <a href="post_story.html" class="nav-link text-dark">Post Story</a>
-                      <a href="" class="nav-link btn" onclick="handleLogout(event)">Logout</a>
+                      <a href="handleLogout('event')" class="nav-link btn" onclick="handleLogout(event)">Logout</a>
                   `;
               }
             else {
@@ -98,7 +98,7 @@
                     <a href="index.html" class="nav-link text-dark">Home</a>
                     <a href="about.html" class="nav-link text-dark">About</a>
                     <a href="index.html#stories" class="nav-link text-dark">Read Stories</a>
-                    <a href="" class="nav-link text-dark btn" onclick="handleLogout(event)">Logout</a>
+                    <a href="handleLogout('event')" class="nav-link text-dark btn" onclick="handleLogout(event)">Logout</a>
                 `;
             }
         } else {
@@ -129,6 +129,10 @@
             <input type="submit" class="btn btn-success p-3" value="Login"/>
         </form>
     </div> 
+    <p class="text-center mt-5">writer username : omor</p>
+    <p class="text-center">writer password : Asdf1234%</p>
+    <p class="text-center mt-5">reader username : nadim</p>
+    <p class="text-center">reader password : Asdf1234%</p>
 </div>
         <!-- registration end -->
         <!-- Remove the container if you want to extend the Footer to full width. -->
@@ -291,6 +295,7 @@
     <script src="js/main.js"></script>
     <!-- user difined js file -->
     <script src="login.js"></script>
+    <script src="logout.js"></script>
 
 </body>
 
